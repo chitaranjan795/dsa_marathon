@@ -1,9 +1,16 @@
 /*
  * LC 7 - Reverse Integer
- * Link: // https://leetcode.com/submissions/detail/2183137688/
+ * Link: https://leetcode.com/submissions/detail/2183137688/
  * Difficulty: Medium
- * Date solved: 27 oct 2026 | Attempts: 3 | Needed hint: yes
+ * Date solved: 27 Oct 2026 | Attempts: 3 | Needed hint: yes
  * Time: O(n) | Space: O(1)
+ *
+ * Approach: pop the last digit with % 10, push it onto the reversed number.
+ * Before every push, check whether rev * 10 + digit would overflow int.
+ *
+ * Where I got stuck: I did the overflow check AFTER computing rev * 10 + digit,
+ * but Java ints wrap silently, so the check never fired. The check must happen
+ * BEFORE the multiplication.
  */
 
 package Maths;
